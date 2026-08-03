@@ -1,21 +1,23 @@
 #pragma once
 
-#include "glm/glm.hpp"
 #include <vector>
+#include "glm/glm.hpp"
 
-//Forward Declaration of glrenderer
+namespace TransformDemo {
+
+// Forward Declaration of glrenderer
 class GLRenderer;
 
-class Gridlines
-{
-public:
+class Gridlines {
+   public:
     void init();
     void draw(GLRenderer* context);
 
-private:
+   private:
     std::vector<float> lineData;
     glm::mat4 m_model;
     glm::vec3 m_color;
     unsigned int m_vbo;
     unsigned int m_vao;
 };
+};  // namespace TransformDemo

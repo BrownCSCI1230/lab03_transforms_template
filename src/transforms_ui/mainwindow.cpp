@@ -3,8 +3,9 @@
 #include <QHBoxLayout>
 #include <iostream>
 
-MainWindow::MainWindow()
-{
+using namespace TransformDemo;
+
+MainWindow::MainWindow() {
     /* Set up the layouts (parent-child diagram):
      *
      *                 hLayout
@@ -17,9 +18,9 @@ MainWindow::MainWindow()
 
     setWindowTitle("Lab 4: Transforms");
 
-    QHBoxLayout *hLayout = new QHBoxLayout;
+    QHBoxLayout* hLayout = new QHBoxLayout;
 
-    QGridLayout *gridLayout = new QGridLayout;
+    QGridLayout* gridLayout = new QGridLayout;
     gridLayout->setAlignment(Qt::AlignTop);
     hLayout->addLayout(gridLayout);
 
@@ -66,9 +67,12 @@ MainWindow::MainWindow()
     connect(buttonBInv, &QPushButton::released, this, &MainWindow::pressBInv);
     connect(buttonCInv, &QPushButton::released, this, &MainWindow::pressCInv);
     connect(buttonDInv, &QPushButton::released, this, &MainWindow::pressDInv);
-    connect(buttonViewInv, &QPushButton::released, this, &MainWindow::pressViewInv);
-    connect(buttonRotation, &QPushButton::released, this, &MainWindow::pressRotation);
-    connect(buttonRotationInv, &QPushButton::released, this, &MainWindow::pressRotationInv);
+    connect(buttonViewInv, &QPushButton::released, this,
+            &MainWindow::pressViewInv);
+    connect(buttonRotation, &QPushButton::released, this,
+            &MainWindow::pressRotation);
+    connect(buttonRotationInv, &QPushButton::released, this,
+            &MainWindow::pressRotationInv);
     connect(buttonReset, &QPushButton::released, this, &MainWindow::pressReset);
 
     transformStr = "you";
@@ -140,7 +144,6 @@ void MainWindow::pressRotationInv() {
     glRenderer->buttonPressed(ROTATION_INV);
     this->addTransformLabel("R⁻¹");
 }
-
 
 void MainWindow::pressReset() {
     glRenderer->buttonPressed(RESET);

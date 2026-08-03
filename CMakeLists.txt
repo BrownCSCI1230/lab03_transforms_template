@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Sets project name
-project(lab04 LANGUAGES CXX C)
+project(lab03 LANGUAGES CXX C)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
@@ -18,6 +18,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS OpenGL)
 find_package(Qt6 REQUIRED COMPONENTS OpenGLWidgets)
 find_package(Qt6 REQUIRED COMPONENTS Gui)
+find_package(Qt6 REQUIRED COMPONENTS Xml)
 
 # Allows you to include files from within those directories, without prefixing their filepaths
 include_directories(src)
@@ -26,18 +27,31 @@ include_directories(src)
 add_executable(${PROJECT_NAME}
   src/main.cpp
 
-  src/glrenderer.cpp
-  src/mainwindow.cpp
-  src/transforms.cpp
-  src/axes.cpp
-  src/gridlines.cpp
+  # transforms
+  src/transforms/transforms.cpp
+  src/transforms/transforms.h
 
-  src/glrenderer.h
-  src/mainwindow.h
-  src/shaderloader.h
-  src/transforms.h
-  src/axes.h
-  src/gridlines.h
+  src/transforms_ui/axes.cpp
+  src/transforms_ui/axes.h
+  src/transforms_ui/glrenderer.cpp
+  src/transforms_ui/glrenderer.h
+  src/transforms_ui/gridlines.cpp
+  src/transforms_ui/gridlines.h
+  src/transforms_ui/mainwindow.cpp
+  src/transforms_ui/mainwindow.h
+
+  # parsing
+  src/parsing/scenedata.h
+  src/parsing/scenefilereader.cpp
+  src/parsing/scenefilereader.h
+  src/parsing/sceneparser.cpp
+  src/parsing/sceneparser.h
+
+  src/parsing_ui/glwidget.cpp
+  src/parsing_ui/glwidget.h
+  src/parsing_ui/mainwindow.cpp
+  src/parsing_ui/mainwindow.h
+  src/parsing_ui/mainwindow.ui
 )
 
 # Specifies other files
@@ -67,6 +81,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   Qt::OpenGL
   Qt::OpenGLWidgets
   Qt::Gui
+  Qt::Xml
   StaticGLEW
 )
 
