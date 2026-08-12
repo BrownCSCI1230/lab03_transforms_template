@@ -65,6 +65,9 @@ qt_add_resources(${PROJECT_NAME} "resources"
   resources/shaders/axes.frag
   resources/shaders/grid.vert
   resources/shaders/grid.frag
+  resources/scenefiles/ambient_total.json
+  resources/scenefiles/directional_light.json
+  resources/scenefiles/primitive_salad.json
 )
 
 # GLEW: this creates its library and allows you to `#include "GL/glew.h"`

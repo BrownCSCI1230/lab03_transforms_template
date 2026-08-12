@@ -503,6 +503,11 @@ GLWidget::~GLWidget() {
     m_vboSphere.destroy();
 }
 
+void GLWidget::saveRenderedImage(const QString& filePath) {
+    QImage img = grabFramebuffer();
+    img.save(filePath);
+}
+
 void GLWidget::initializeGL() {
     QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
 

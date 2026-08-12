@@ -21,6 +21,7 @@ class MainWindow : public QWidget {
 
    public slots:
     void fileOpen();
+    void exportRenderedScenes();
 
    private:
     Ui::MainWindow* ui;

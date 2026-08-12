@@ -16,6 +16,7 @@ class GLWidget : public QOpenGLWidget {
     ~GLWidget();
 
     void loadScene(const RenderData& renderData);
+    void saveRenderedImage(const QString& filePath);
 
    protected:
     void initializeGL() override;

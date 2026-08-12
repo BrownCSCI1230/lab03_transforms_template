@@ -21,6 +21,14 @@
     <layout class="QHBoxLayout" name="topBarLayout">
 
      <item>
+      <widget class="QPushButton" name="exportButton">
+       <property name="text">
+        <string>Export Rendered Scenes</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
       <widget class="QPushButton" name="fileButton">
        <property name="text">
         <string>File</string>
