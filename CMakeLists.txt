@@ -70,6 +70,11 @@ qt_add_resources(${PROJECT_NAME} "resources"
   resources/scenefiles/primitive_salad.json
 )
 
+target_compile_definitions(${PROJECT_NAME}
+    PRIVATE
+        STUDENT_OUTPUTS_DIR="${CMAKE_CURRENT_SOURCE_DIR}/student_outputs"
+)
+
 # GLEW: this creates its library and allows you to `#include "GL/glew.h"`
 add_library(StaticGLEW STATIC glew/src/glew.c)
 include_directories(${PROJECT_NAME} PRIVATE glew/include)

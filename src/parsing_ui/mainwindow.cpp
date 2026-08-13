@@ -53,9 +53,7 @@ void MainWindow::fileOpen() {
 
 void MainWindow::exportRenderedScenes() {
     // Create output directory if it doesn't exist
-    QDir outputDir(QDir::currentPath()
-                       .append(QDir::separator())
-                       .append("student_outputs"));
+    QDir outputDir(STUDENT_OUTPUTS_DIR);
     if (!outputDir.exists()) {
         QDir().mkdir(outputDir.absolutePath());
     }
