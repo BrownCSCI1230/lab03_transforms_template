@@ -1,21 +1,21 @@
 #pragma once
 
+#include <vector>
 #include "GL/glew.h"
 #include "glm/glm.hpp"
-#include <vector>
 
+namespace TransformDemo {
 // Forward Declaration of glrenderer
 class GLRenderer;
 
-class Axes
-{
-public:
+class Axes {
+   public:
     void applyTransform(glm::mat4 transform);
     void init(glm::mat4 model, glm::vec3 color);
     void draw(GLRenderer* context);
     void reset();
 
-private:
+   private:
     std::vector<float> coneData;
     glm::mat4 m_model;
     glm::vec3 m_color;
@@ -24,3 +24,4 @@ private:
     unsigned int m_arrowVbo;
     unsigned int m_arrowVao;
 };
+};  // namespace TransformDemo
